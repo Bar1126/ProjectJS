@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phone Book</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -15,40 +15,19 @@
 
   <main>
     <div class="container">
-      <button class="add-contact-btn">Add Contact</button>
+      <button id="addcontactbtn" onclick="addcontact()" class="add-contact-btn">Add Contact</button>
       <ul class="phone-list">
-        <li>
-          person1
-          <div class="actions">
-            <button>Info</button>
-            <button>Edit</button>
-            <button>Delete</button>
-          </div>
-        </li>
-        <li>
-          person2
-          <div class="actions">
-            <button>Info</button>
-            <button>Edit</button>
-            <button>Delete</button>
-          </div>
-        </li>
-        <li>
-          person3
-          <div class="actions">
-            <button>Info</button>
-            <button>Edit</button>
-            <button>Delete</button>
-          </div>
-        </li>
+
       </ul>
     </div>
 
     <div class="popup" id="contact-info">
       <div class="popup-content">
         <h2>Contact Info</h2>
-        <p>...........</p>
-        <button class="close-btn">&times;</button>
+        <p id="contactinfop1">...........</p>
+
+        <p id="contactinfop2"></p>
+        <button onclick="closeinfo()" class="close-btn">&times;</button>
       </div>
     </div>
 
@@ -56,8 +35,14 @@
     <div class="popup" id="add-contact">
       <div class="popup-content">
         <h2>Add Contact</h2>
-        <p>..........</p>
-        <button class="close-btn">&times;</button>
+        <form class="addcontactform" onsubmit="adder(event)">
+          <input id="nameadd" type="text" placeholder="Name" maxlength="20">
+          <input id="ageadd" type="number" placeholder="Age">
+          <input id="numadd" type="text" placeholder="+972" maxlength="10">
+          <br>
+          <button type="submit" id="addcontactfinalbtn">Add contact</button>
+        </form>
+        <button onclick="closeaddcontact()" id="closebtnpopup" class="close-btn">&times;</button>
       </div>
     </div>
 
@@ -67,6 +52,7 @@
   <footer>
     <span>&copy; Liran &amp; Bar</span>
   </footer>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

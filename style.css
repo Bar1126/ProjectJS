@@ -68,6 +68,10 @@ main {
   background-color: rgb(59, 92, 135);
 }
 
+.actions {
+  margin-left: auto;
+}
+
 .add-contact-btn {
   background-color: rgb(74, 111, 165);
   color: white;
@@ -75,10 +79,12 @@ main {
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 14px;
+  margin-bottom: 2%;
 }
 
 .add-contact-btn:hover {
   background-color: rgb(59, 92, 135);
+
 }
 
 
@@ -127,7 +133,21 @@ footer {
   top: 10px;
   right: 10px;
   background: none;
+  background-color: rgb(74, 111, 165);
   border: none;
+  border-radius: 1.1em;
   font-size: 20px;
   color: rgb(51, 51, 51);
+  cursor: pointer;
+}
+
+#addcontactfinalbtn {
+  margin-top: 3%;
+}
+
+.addcontactform input {
+  margin: 1%;
+  background-color: bisque;
+  border: solid 1px;
+  border-radius: 0.4em;
 }
