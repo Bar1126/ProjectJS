@@ -183,3 +183,27 @@ function darkmode() {
     document.querySelector('header').className = 'lightmodeheader';
   }
 }
+
+//search contact
+const searchBtn = document.getElementById('searchBtn');
+searchBtn.addEventListener('click', () => {
+  const nameToFind = document.getElementById('searchInput').value.trim().toLowerCase();
+  let found = false;
+  for (let i = 0; i < contactlist.length; i++) {
+    if (contactlist[i].name.toLowerCase() === nameToFind) {
+      showinfo(contactlist[i].name, contactlist[i].phonenum, contactlist[i].age, contactlist[i].email, contactlist[i].freetext, contactlist[i].dateadded);
+      found = true;
+      break;
+    }
+  }
+  console.log("Looking for:", nameToFind);
+  console.log("Contact list:", contactlist);
+
+  if (!found) {
+    alert(`Sorry, ${nameToFind} is not in the phone book`);
+  }
+  document.getElementById('searchInput').value = "";
+});
+
+
+
