@@ -8,6 +8,18 @@ body {
   min-height: 100vh;
 }
 
+.darkmode {
+  background-color: black;
+  color: black;
+}
+
+.darkmodeheader {
+  background-color: #4d4b4b;
+}
+
+.darkmodeheader h1 {
+  color: rgb(83, 131, 253);
+}
 
 header {
   background-color: rgb(223, 228, 234);
@@ -15,11 +27,27 @@ header {
   text-align: center;
 }
 
+.darkmodetoggle {
+  position: fixed;
+  left: 20;
+}
+
 header h1 {
   color: rgb(74, 111, 165);
   margin: 0;
+  margin-right: 1%;
 }
 
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title img {
+  width: 50px;
+  height: auto;
+}
 
 main {
   flex: 1;
@@ -37,7 +65,7 @@ main {
   padding: 0;
   background-color: rgb(223, 228, 234);
   border-radius: 8px;
-  width: 350px;
+  width: 700px;
   text-align: center;
   margin: auto;
 }
@@ -48,6 +76,14 @@ main {
   font-weight: 500;
   display: flex;
   align-items: center;
+  transition: background-color 1s, height 0.6s ease;
+  height: 40px;
+}
+
+.phone-list li:hover {
+  background-color: rgb(146, 147, 148);
+  height: 60px;
+  border-radius: 8px;
 }
 
 .phone-list li:last-child {
@@ -84,9 +120,7 @@ main {
 
 .add-contact-btn:hover {
   background-color: rgb(59, 92, 135);
-
 }
-
 
 footer {
   background-color: rgb(74, 111, 165);
@@ -94,7 +128,6 @@ footer {
   text-align: center;
   padding: 10px 0;
 }
-
 
 .popup {
   display: none;
@@ -113,7 +146,7 @@ footer {
   border-radius: 8px;
   padding: 20px;
   width: 300px;
-  height: 200px;
+  height: 300px;
   margin-top: -100px;
   margin-left: -150px;
   text-align: center;
@@ -143,6 +176,13 @@ footer {
 
 #addcontactfinalbtn {
   margin-top: 3%;
+}
+
+#editcontactfinalbtn {
+  margin-top: 3%;
+  background-color: rgb(74, 111, 165);
+  border-radius: 8px;
+  color: white;
 }
 
 .addcontactform input {

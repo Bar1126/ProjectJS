@@ -5,17 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phone Book</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-  <header>
-    <h1>Phone Book</h1>
+<body class="lightmode">
+
+  <header class="lightmodeheader">
+    <div class="darkmodetoggle">
+      <button id="darkbutton" onclick="darkmode()"><img src="./moon1.png" alt="moon" width="25px"
+          id="btnimagedark"></button>
+    </div>
+    <div class="header-title">
+      <h1>Phone Book</h1>
+      <img src="./phonebooklogo.png" alt="phonebooklogo" width="50px">
+    </div>
   </header>
 
   <main>
     <div class="container">
       <button id="addcontactbtn" onclick="addcontact()" class="add-contact-btn">Add Contact</button>
+      <button class="add-contact-btn" id="deleteallbtn" onclick="deletall()">Delete All</button>
       <ul class="phone-list">
 
       </ul>
@@ -24,9 +33,12 @@
     <div class="popup" id="contact-info">
       <div class="popup-content">
         <h2>Contact Info</h2>
+        <p id="namename">name</p>
         <p id="contactinfop1">...........</p>
-
         <p id="contactinfop2"></p>
+        <p id="contactinfop3"></p>
+        <p id="contactinfop4"></p>
+        <p id="contactinfop5"></p>
         <button onclick="closeinfo()" class="close-btn">&times;</button>
       </div>
     </div>
@@ -39,6 +51,8 @@
           <input id="nameadd" type="text" placeholder="Name" maxlength="20">
           <input id="ageadd" type="number" placeholder="Age">
           <input id="numadd" type="text" placeholder="+972" maxlength="10">
+          <input id="emailadd" type="email" placeholder="Email">
+          <input id="freetextadd" type="text" placeholder="Got Somthing To Say?">
           <br>
           <button type="submit" id="addcontactfinalbtn">Add contact</button>
         </form>
@@ -46,13 +60,34 @@
       </div>
     </div>
 
+    <div class="popup" id="edit-contact">
+      <div class="popup-content">
+        <h2 class="edith2">Edit Contact</h2>
+
+        <form class="editcontactform" onsubmit="editor(event)">
+          <input id="nameedit" type="text" placeholder="Name" maxlength="20">
+          <input id="ageedit" type="number" placeholder="Age">
+          <input id="numedit" type="text" placeholder="+972" maxlength="10">
+          <input id="emailedit" type="email" placeholder="Email">
+          <input id="freetextedit" type="text" placeholder="Got Somthing To Say?">
+          <span style="display: none;" id="idofcontact">id</span>
+          <br>
+          <button type="submit" id="editcontactfinalbtn">Edit contact</button>
+        </form>
+
+        <button onclick="closeeditcontact()" id="closebtnpopup2" class="close-btn">&times;</button>
+      </div>
+    </div>
+
+
 
   </main>
 
   <footer>
     <span>&copy; Liran &amp; Bar</span>
   </footer>
-  <script src="./js/index.js"></script>
+
+  <script src="./index.js"></script>
 </body>
 
 </html>
