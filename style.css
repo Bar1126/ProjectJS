@@ -8,18 +8,20 @@ body {
   min-height: 100vh;
 }
 
-.darkmode {
+.darkMode {
   background-color: black;
-  color: black;
+  color: #ccc;
 }
 
-.darkmodeheader {
+.darkModeHeader {
   background-color: #4d4b4b;
 }
 
-.darkmodeheader h1 {
+.darkModeHeader h1 {
   color: rgb(83, 131, 253);
 }
+
+
 
 header {
   background-color: rgb(223, 228, 234);
@@ -27,7 +29,7 @@ header {
   text-align: center;
 }
 
-.darkmodetoggle {
+.darkModeToggle {
   position: fixed;
   left: 20;
 }
@@ -49,28 +51,78 @@ header h1 {
   height: auto;
 }
 
-main {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  align-content: center;
+#emptyMessage {
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 20px;
 }
 
 .container {
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.phone-list {
-  list-style: none;
-  padding: 0;
-  background-color: rgb(223, 228, 234);
-  border-radius: 8px;
-  width: 700px;
+.btn {
+  background-color: rgb(74, 111, 165);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 2%;
+}
+
+.btn:hover {
+  background-color: rgb(59, 92, 135);
+}
+
+#searchBtn {
+  background-color: rgb(74, 111, 165);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 2%;
+}
+
+#searchBtn:hover {
+  background-color: rgb(59, 92, 135);
+}
+
+.searchBar {
+  margin-top: 5%;
   text-align: center;
-  margin: auto;
+  margin-bottom: 15px;
 }
 
-.phone-list li {
+.searchBar,
+#addContactBtn,
+#deleteAllBtn {
+  margin-bottom: 10px;
+}
+
+.searchBar input {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px;
+  font-size: 14px;
+}
+
+.actionBtns {
+  margin-top: 5%;
+  padding-right: 15%;
+}
+
+.phoneList li {
+  background-color: rgb(207, 220, 231);
+  border-radius: 2.5px;
   padding: 15px;
   border-bottom: 1px solid rgb(193, 201, 209);
   font-weight: 500;
@@ -80,13 +132,96 @@ main {
   height: 40px;
 }
 
-.phone-list li:hover {
+.phoneList li:hover {
   background-color: rgb(146, 147, 148);
   height: 60px;
   border-radius: 8px;
 }
 
-.phone-list li:last-child {
+.phoneList li:last-child {
+  border-bottom: none;
+}
+
+.popUp {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+}
+
+.popupContent {
+  position: fixed;
+  background-color: rgb(244, 246, 248);
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+  margin-top: -100px;
+  margin-left: -150px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+}
+
+.popupContent h2 {
+  margin-top: 0;
+  color: rgb(74, 111, 165);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  background-color: rgb(74, 111, 165);
+  border: none;
+  border-radius: 1.1em;
+  font-size: 20px;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+}
+
+#addContactBtn {
+  margin-top: 3%;
+}
+
+#editContactBtn {
+  margin-top: 3%;
+  background-color: rgb(74, 111, 165);
+  border-radius: 8px;
+  color: white;
+}
+
+.addContactForm input {
+  margin: 1%;
+  background-color: bisque;
+  border: solid 1px;
+  border-radius: 0.4em;
+}
+
+.phoneList li {
+  padding: 15px;
+  border-bottom: 1px solid rgb(193, 201, 209);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: background-color 1s, height 0.6s ease;
+  height: 40px;
+}
+
+.phoneList li:hover {
+  background-color: rgb(146, 147, 148);
+  height: 60px;
+  border-radius: 8px;
+}
+
+.phoneList li:last-child {
   border-bottom: none;
 }
 
@@ -108,113 +243,10 @@ main {
   margin-left: auto;
 }
 
-.add-contact-btn {
-  background-color: rgb(74, 111, 165);
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-bottom: 2%;
-}
-
-.add-contact-btn:hover {
-  background-color: rgb(59, 92, 135);
-}
-
 footer {
   background-color: rgb(74, 111, 165);
   color: white;
   text-align: center;
   padding: 10px 0;
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
-}
-
-.popup-content {
-  position: fixed;
-  background-color: rgb(244, 246, 248);
-  border-radius: 8px;
-  padding: 20px;
-  width: 300px;
-  height: 300px;
-  margin-top: -100px;
-  margin-left: -150px;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -150px;
-}
-
-.popup-content h2 {
-  margin-top: 0;
-  color: rgb(74, 111, 165);
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  background-color: rgb(74, 111, 165);
-  border: none;
-  border-radius: 1.1em;
-  font-size: 20px;
-  color: rgb(51, 51, 51);
-  cursor: pointer;
-}
-
-#addcontactfinalbtn {
-  margin-top: 3%;
-}
-
-#editcontactfinalbtn {
-  margin-top: 3%;
-  background-color: rgb(74, 111, 165);
-  border-radius: 8px;
-  color: white;
-}
-
-.addcontactform input {
-  margin: 1%;
-  background-color: bisque;
-  border: solid 1px;
-  border-radius: 0.4em;
-}
-
-#searchBtn {
-  background-color: rgb(74, 111, 165);
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-bottom: 2%;
-}
-
-#searchBtn:hover {
-  background-color: rgb(59, 92, 135);
-}
-
-.search-bar {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.search-bar input {
-  padding: 6px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 200px;
-  font-size: 14px;
+  margin-top: auto;
 }
