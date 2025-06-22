@@ -10,7 +10,7 @@ body {
 
 .darkMode {
   background-color: black;
-  color: #ccc;
+  color: #000000;
 }
 
 .darkModeHeader {
@@ -30,7 +30,7 @@ header {
 }
 
 .darkModeToggle {
-  position: fixed;
+  position:absolute;
   left: 20;
 }
 

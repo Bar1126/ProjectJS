@@ -50,6 +50,7 @@ let contactList = [
 ];
 const ul = document.querySelector('.phoneList');
 
+//sorting function - sort list in alphabetical order
 const sortContacts = () => {
   ul.innerHTML = '';
   contactList.sort((a, b) => a.name.localeCompare(b.name));
@@ -111,6 +112,7 @@ ul.addEventListener('click', e => {
     document.getElementById('editNum').value = contact.phoneNum;
     document.getElementById('editEmail').value = contact.email;
     document.getElementById('editFreeText').value = contact.freeText;
+    document.getElementById('contactInfoP5').textContent = `Edited: ${contact.dateAdded = new Date()}`
     document.getElementById('contactId').setAttribute('data-id', index);
     document.getElementById('editContact').style.display = 'block';
   }
@@ -142,6 +144,10 @@ document.querySelector('.addContactForm').onsubmit = e => {
   const email = document.getElementById("Addemail").value.trim();
   const freeText = document.getElementById("AddFreeText").value.trim();
 
+  if (!name || !phoneNum) {
+    alert("Enter Valid Values");
+    return;
+  }
   if (contactList.some(c => c.name.toLowerCase() === name.toLowerCase())) {
     alert("this contact is already in the list");
     return;
@@ -230,15 +236,3 @@ deleteAllBtn.addEventListener('click', (e) => {
     sortContacts();
   }
 });
-
-//empty list message
-// const emptyMessage = document.getElementById('emptyMessage');
-// if(contactList.length === 0)
-// {
-//   emptyMessage.style.display = 'block'
-//   return;
-// }
-// else
-// {
-//   emptyMessage.style.display = 'none'
-// }
