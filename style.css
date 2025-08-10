@@ -21,8 +21,6 @@ body {
   color: rgb(83, 131, 253);
 }
 
-
-
 header {
   background-color: rgb(223, 228, 234);
   padding: 20px;
@@ -30,7 +28,7 @@ header {
 }
 
 .darkModeToggle {
-  position:absolute;
+  position: absolute;
   left: 20;
 }
 
